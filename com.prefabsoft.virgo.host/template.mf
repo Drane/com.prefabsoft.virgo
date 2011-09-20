@@ -1,0 +1,13 @@
+Manifest-Version: 1
+Bundle-SymbolicName: com.prefabsoft.virgo.host
+Bundle-Version: 3.0.1.RELEASE
+Bundle-ManifestVersion: 2
+Bundle-Name: Multiple Styles Host
+Web-ContextPath: /prefabsoft
+Import-Package: 
+ org.eclipse.virgo.snaps.core;version="${version:[=.=.=, =.+1)}",
+ javax.servlet.jsp.jstl.core;version="${javax.servlet.jsp.jstl:[=.=.=,+1.=.=)}"
+Import-Bundle: 
+ com.springsource.org.apache.taglibs.standard;version="${org.apache.taglibs.standard:[=.=.=,+1.=.=)}",
+ org.eclipse.virgo.snaps.api;version="${version:[=.=.=, =.+1)}"
+

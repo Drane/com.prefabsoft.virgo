@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.prefabsoft.virgo.about
+Bundle-Version: 3.0.1.RELEASE
+Bundle-ManifestVersion: 2
+Bundle-Name: Prefabsoft About Menu Item Snap
+Snap-Host: com.prefabsoft.virgo.host;version="${version:[=.=.=, =.+1)}"
+Snap-ContextPath: /about
+Excluded-Exports: images
+Import-Bundle: 
+ com.springsource.org.apache.taglibs.standard;version="${org.apache.taglibs.standard:[=.=.=,+1.=.=)}",
+ org.eclipse.virgo.snaps.api;version="${version:[=.=.=, =.+1)}"
+Import-Package: 
+ javax.servlet.jsp.jstl.core;version="${javax.servlet.jsp.jstl:[=.=.=,+1.=.=)}",
+ org.eclipse.virgo.snaps.core;version="${version:[=.=.=, =.+1)}"

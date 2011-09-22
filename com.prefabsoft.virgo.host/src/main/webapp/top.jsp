@@ -7,8 +7,8 @@
 	<link rel="shortcut icon" href="<c:url value="/images/favicon.ico"/>" />
 
 	<link rel="stylesheet" href="<c:url value="/styles/main.css"   />" type="text/css" />
-	<link rel="stylesheet" href="<c:url value="/styles/local.css"  />" type="text/css" />
-	<link rel="stylesheet" href="<c:url value="/styles/print.css"  />" type="text/css" media="print" />
+	<link rel="stylesheet" href="<c:url value="../styles/local.css"  />" type="text/css" />
+	<link rel="stylesheet" href="<c:url value="../styles/print.css"  />" type="text/css" media="print" />
 </head>
 
 <body class="main">

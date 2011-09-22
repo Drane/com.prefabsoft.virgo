@@ -3,7 +3,7 @@
     <wb-module deploy-name="com.prefabsoft.virgo.host">
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <property name="context-root" value="com.prefabsoft.virgo.host"/>
         <property name="java-output-path" value="/com.prefabsoft.virgo.host/target/classes"/>
+        <property name="context-root" value="prefabsoft"/>
     </wb-module>
 </project-modules>

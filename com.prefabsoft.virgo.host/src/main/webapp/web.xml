@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	<display-name>com.prefabsoft.virgo.host</display-name>
+	<!-- <welcome-file-list> -->
+	<!-- <welcome-file>index.html</welcome-file> -->
+	<!-- <welcome-file>index.htm</welcome-file> -->
+	<!-- <welcome-file>index.jsp</welcome-file> -->
+	<!-- <welcome-file>default.html</welcome-file> -->
+	<!-- <welcome-file>default.htm</welcome-file> -->
+	<!-- <welcome-file>default.jsp</welcome-file> -->
+	<!-- </welcome-file-list> -->
+
+
+	<!-- Just here so the JSF implementation can initialize, *not* used at runtime -->
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Just here so the JSF implementation can initialize -->
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<description>State saving method: 'client' or 'server' (=default). See JSF Specification 2.5.2</description>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>client</param-value>
+	</context-param>
+
+	<!-- Serves static resource content from .jar files such as spring-faces.jar -->
+<!-- 	<servlet> -->
+<!-- 		<servlet-name>Resource Servlet</servlet-name> -->
+<!-- 		<servlet-class>org.springframework.js.resource.ResourceServlet</servlet-class> -->
+<!-- 		<load-on-startup>0</load-on-startup> -->
+<!-- 	</servlet> -->
+
+	<!-- Map all /resources requests to the Resource Servlet for handling -->
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>Resource Servlet</servlet-name> -->
+<!-- 		<url-pattern>/resources/*</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+
+<!-- 	Use JSF view templates saved as *.xhtml, for use with Facelets -->
+<!-- 	<context-param> -->
+<!-- 		<param-name>javax.faces.DEFAULT_SUFFIX</param-name> -->
+<!-- 		<param-value>.xhtml</param-value> -->
+<!-- 	</context-param> -->
+
+	<!-- <context-param> -->
+	<!-- <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name> -->
+	<!-- <param-value>resources.application</param-value> -->
+	<!-- </context-param> -->
+	<listener>
+		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+	</listener>
+
+	<!-- CONFIGURE A PARENT APPLICATION CONTEXT -->
+
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>org.eclipse.virgo.web.dm.ServerOsgiBundleXmlWebApplicationContext</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- DISPATCHER SERVLET CONFIG -->
+
+	<servlet>
+		<servlet-name>host</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/host-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>host</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<!-- <filter> -->
+	<!-- <filter-name>host-filter</filter-name> -->
+	<!-- <filter-class>org.eclipse.virgo.snaps.core.SnapHostFilter</filter-class> -->
+	<!-- </filter> -->
+
+	<!-- <filter-mapping> -->
+	<!-- <filter-name>host-filter</filter-name> -->
+	<!-- <url-pattern>/</url-pattern> -->
+	<!-- <dispatcher>INCLUDE</dispatcher> -->
+	<!-- <dispatcher>FORWARD</dispatcher> -->
+	<!-- <dispatcher>REQUEST</dispatcher> -->
+	<!-- </filter-mapping> -->
+
+
+
+
+</web-app>

@@ -1,12 +1,33 @@
 Manifest-Version: 1
-Import-Bundle: com.springsource.org.apache.taglibs.standard;version="[
- 1.1.2,2.1.2)",org.eclipse.virgo.snaps.api;version="[3.0.1,3.1)"
-Bundle-Version: 3.0.1.RELEASE
+Import-Bundle: com.springsource.org.apache.taglibs.standard;version="[1.1.2,2.1.2)",
+ org.eclipse.virgo.snaps.api;version="[3.0.1,3.1)",
+ com.springsource.slf4j.org.apache.commons.logging;version="[1.6.1,2.6.1)"
 Tool: Bundlor 1.0.0.RELEASE
 Bundle-Name: Multiple Styles Host
-Bundle-ManifestVersion: 2
+Import-Package: com.sun.faces.config,
+ javax.faces.webapp,
+ javax.servlet;version="[2.5.0,4)",
+ javax.servlet.http;version="[2.5.0,4)",
+ javax.servlet.jsp.jstl.core;version="[1.2.0,2.2.0)",
+ org.apache.commons.logging,
+ org.eclipse.virgo.snaps.core;version="[3.0.1,3.1)",
+ org.eclipse.virgo.web.dm;version="[2,4)",
+ org.springframework.context.config;version="[2.5.6,4)",
+ org.springframework.context.support;version="[2.5.6,4)",
+ org.springframework.stereotype;version="[2.5.6,4)",
+ org.springframework.web;version="[2.5.6,4)",
+ org.springframework.web.bind.annotation;version="[2.5.6,4)",
+ org.springframework.web.context;version="[2.5.6,4)",
+ org.springframework.web.servlet;version="[2.5.6,4)",
+ org.springframework.web.servlet.view;version="[2.5.6,4)"
 Bundle-SymbolicName: com.prefabsoft.virgo.host
+Export-Package: com.prefabsoft.virgo.host;version="3.0.1.RELEASE";
+  uses:="javax.servlet.http,
+   org.springframework.stereotype,
+   org.springframework.web.bind.annotation,
+   org.springframework.web.servlet"
 Web-ContextPath: /prefabsoft
-Import-Package: javax.servlet.jsp.jstl.core;version="[1.2.0,2.2.0)",or
- g.eclipse.virgo.snaps.core;version="[3.0.1,3.1)"
-
+Bundle-Version: 3.0.1.RELEASE
+Require-Bundle: org.glassfish.com.sun.faces
+Bundle-ManifestVersion: 2
+Bundle-ClassPath: WEB-INF/classes

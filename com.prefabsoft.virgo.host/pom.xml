@@ -13,5 +13,6 @@
 		<org.springframework>3</org.springframework>
 		<org.eclipse.virgo.web>3</org.eclipse.virgo.web>
 		<org.slf4j>1.6.1</org.slf4j>
+		<org.eclipse.gemini.web>2</org.eclipse.gemini.web>
 	</properties>
 </project>

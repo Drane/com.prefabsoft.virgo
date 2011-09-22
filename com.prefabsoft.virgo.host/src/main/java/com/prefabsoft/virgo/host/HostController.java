@@ -8,13 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.osgi.framework.BundleContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.eclipse.gemini.web.core.WebContainer;
 
 @Controller
 public class HostController {
 
+    private static final String SNAP_SERVICE_CLASS = "org.eclipse.virgo.snaps.core.internal.Snap";
+    public static final String SNAPS_ATTRIBUTE_NAME = "snaps";
+	
 	 @RequestMapping("/")
 	    public ModelAndView get(HttpServletRequest request) throws IOException {
 
@@ -25,7 +30,9 @@ public class HostController {
 	    	//classic logging via SLF4J
 //	        MDC.put("*** ipAddress", request.getRemoteAddr());
 
-
+	        BundleContext bundleContext = (BundleContext) request.getServletContext().getAttribute(WebContainer.ATTRIBUTE_BUNDLE_CONTEXT);
+	        
+	        
 	    	URL host = request.getServletContext().getResource("host:/WEB-INF/sample.properties");
 	    	Properties host_props = new Properties();
 	    	if(host != null){
